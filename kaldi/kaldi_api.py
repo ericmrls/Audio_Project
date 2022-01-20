@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.post("/stt")
 async def stt(my_file: UploadFile = File(...)):
-    result_path = '/home/heghehog/Github/audio_project/kaldi/kaldi/egs/wsj/s5/exp/chain_cleaned/tdnn_1d_sp/decode_test_dev93_tgsmall/scoring_kaldi/wer_details/per_utt'
+    result_path = '/kaldi/egs/wsj/s5/exp/chain_cleaned/tdnn_1d_sp/decode_test_dev93_tgsmall/scoring_kaldi/wer_details/per_utt'
     
     with open('tmp_output.wav','wb') as f:
         f.write(my_file.file.read())
@@ -20,7 +20,6 @@ async def stt(my_file: UploadFile = File(...)):
 
     os.system('. ./commands_run.sh')
 
-    os.chdir('/home/heghehog/Github/audio_project/kaldi/')
     
     with open(result_path, 'r') as f:
         text = re.sub(' +', ' ', f.readlines()[1])[10:].lower()
