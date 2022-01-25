@@ -1,6 +1,6 @@
 # GPT-3 Voice Chat (TTS+STT+LM)
 
-TextToSpeech + SpeechToText + Languaje Model
+TextToSpeech + SpeechToText + Language Model
 
 * Eric Morales Agostinho
 
